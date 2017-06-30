@@ -1,0 +1,90 @@
+
+#!!!! D'ONT FORGET TO ENABLE !!!!
+#|bspc config focus_follows_pointer true|
+
+################################## User Config
+
+## Terminal --->
+super + Return
+	termite
+
+## Program Launcher --->
+super + d
+	dmenu_run
+
+## Reload Config --->
+super + r
+	pkill -USR1 -x sxhkd
+
+## Quit bspwm --->
+super + shift + e
+	bspc quit
+
+## Close 
+super + a
+	bspc node -c
+
+## Gaps control
+super + {o,p}
+	bspc config window_gap $(( $(bspc config window_gap) {+,-} 2 ))
+super + l
+	bspc config window_gap 8
+
+
+
+################################### System Config
+########## Mode config --->
+
+## Normal Tiling
+super + F1 	
+	bspc node -t tiled
+
+## Floating
+super + F2
+	bspc node -t floating
+
+## Fullscreen 
+super + F3
+	bspc node -t fullscreen
+
+###########################
+
+########## Focus/Swap  --->
+
+#Focus or Send node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+#Focus or Send node to the given desktop
+super + {_,shift +}{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+###########################
+
+########## Preselect   --->
+
+#Preselect the direction
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+#Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+#Cancel preselection
+super + ctrl + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+###########################
+
+########## Resize Node --->
+
+# Expand Node
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
+
+# Contract Node
+super + alt + ctrl + {Left,Down,Up,Right}
+	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+
+##########################

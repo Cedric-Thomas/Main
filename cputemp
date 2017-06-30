@@ -1,0 +1,15 @@
+#!/bin/bash
+core1=`sensors -u coretemp-isa-0000 | grep -o -P 'temp.*_input:.{0,3}' | sed 's/temp.*_input://' | sed 's/ //' | sed '1!d'`
+core2=`sensors -u coretemp-isa-0000 | grep -o -P 'temp.*_input:.{0,3}' | sed 's/temp.*_input://' | sed 's/ //' | sed '2!d'`
+core3=`sensors -u coretemp-isa-0000 | grep -o -P 'temp.*_input:.{0,3}' | sed 's/temp.*_input://' | sed 's/ //' | sed '3!d'`
+core4=`sensors -u coretemp-isa-0000 | grep -o -P 'temp.*_input:.{0,3}' | sed 's/temp.*_input://' | sed 's/ //' | sed '4!d'`
+temp=$((($core1+$core2+$core3+$core4)/4))
+if [ "$temp" -ge 70 ];  then
+	echo -e "\e[1m\e[35m$temp\e[0m"
+elif [ "$temp" -ge 60 ]; then
+	echo -e "\e[1m\e[31m$temp\e[0m"
+elif [ "$temp" -ge 50 ]; then
+	echo -e "\e[1m\e[33m$temp\e[0m"
+else
+	echo -e "\e[1m\e[34m$temp\e[0m"
+fi
