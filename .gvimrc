@@ -1,0 +1,9 @@
+syntax on
+colorscheme bcs
+set nu
+set gfn=Ubuntu_Mono:h10
+set backspace=indent,eol,start
+set ts=3
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
