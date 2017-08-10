@@ -1,0 +1,17 @@
+pacman -S zip unzip p7zip mc alsa-utils syslog-ng mtools dosfstools lsb-release ntfs-3g exfat-utils tmux screenfetch gvim irssi openssh yaourt ntp bluez bluez-utils jfsutils
+
+pacman -S xorg-{server,xinit,apps} xf86-input-{synaptics,mouse,keyboard} xf86-video-intel xdg-user-dirs ttf-{bitstream-vera,liberation,freefont,dejavu} gst-plugins-{base,good,bad,ugly} gst-libav lightdm lightdm-gtk-greeter adwaita-icon-theme eog gnome-{flashback,backgrounds,calculator,contacts,control-center,disk-utility,font-viewer,keyring,screenshot,session,settings-daemon,user-docs,user-share,calendar,chess,clocks,color-manager,logs,tweak-tool} gtk3-print-backends gucharmap gvfs gvfs-{afc,goa,google,gphoto2,mtp,nfs,smb} mousetweaks nautilus networkmanager sushi mpv tracker vino xdg-user-dirs-gtk evolution file-roller gedit plank dconf-editor chromium keepassx bleachbit termite rhythmbox libcups cups ghostscript hplip avahi python-pyqt5 simple-scan
+
+pacman -S gnome-nettool net-tools nmap ncrack wireshark-gtk metasploit
+pacman -S latexila octave arduino texlive-most texlive-lang
+pacman -S virtualbox
+yaourt -S chromium-widevine
+
+systemctl enable org.cups.cupsd.service
+systemctl enable avahi-daemon
+systemctl enable avahi-dnsconfd
+systemctl enable ntpd
+systemctl enable syslog-ng
+systemctl enable bluetooth
+systemctl enable NetworkManager
+systemctl enable lightdm
