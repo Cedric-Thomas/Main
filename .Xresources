@@ -1,0 +1,57 @@
+! General settings
+XTerm*termName: xterm-256color
+XTerm*geometry: 110x30+460+200
+XTerm*saveLines: 1024
+XTerm*scrollBar: False
+XTerm*loginshell: False
+XTerm*cursorBlink: True
+
+! Fonts and Encoding
+XTerm*utf8: True
+XTerm*locale: True
+XTerm*utf8Title: True
+XTerm*xftAntialias: true
+XTerm*faceName: xft:Fantasque Sans Mono-13
+
+! Copy and paste with clipboard
+XTerm*translations: #override \
+	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
+
+! special
+XTerm*.foreground:   #fce8c3
+XTerm*.background:   #1c1b19
+XTerm*.cursorColor:  #fce8c3
+
+! black
+XTerm*.color0:       #1c1b19
+XTerm*.color8:       #2d2b28
+
+! red
+XTerm*.color1:       #ff3128
+XTerm*.color9:       #f75341
+
+! green
+XTerm*.color2:       #519f50
+XTerm*.color10:      #98bc37
+
+! yellow
+XTerm*.color3:       #fbb829
+XTerm*.color11:      #fed06e
+
+! blue
+XTerm*.color4:       #5573a3
+XTerm*.color12:      #8eb2f7
+ 
+! magenta
+XTerm*.color5:       #e02c6d
+XTerm*.color13:      #e35682
+ 
+! cyan
+XTerm*.color6:       #0aaeb3
+XTerm*.color14:      #53fde9
+
+! white
+XTerm*.color7:       #918175
+XTerm*.color15:	     #fce8c3
